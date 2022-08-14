@@ -1,14 +1,19 @@
-body{
+*{
     font-family: 'Montserrat', sans-serif;
 }
-.text_left_title_col{
+.text_left_title_col,.info_wallet_title{
     font-size:30px;
-    margin:2vh 0 2vh 0;
+    margin:4vh 0 2vh 0;
     font-weight:bold;
     color:rgba(72, 0, 85, 0.635);
+    text-transform:capitalize;
+}
+#wallet_row_wrapper{
+    height:75vh;
+    overflow:auto;
 }
 .wallet_text{
-    font-size:22px;
+    font-size:20px;
     margin:2vh 0 0.3vh 0;
     color:rgb(0, 0, 0);
 }
@@ -19,6 +24,7 @@ body{
     width:90%;
     border-bottom: 1px solid rgba(197, 197, 197, 0.561);
     cursor:pointer;
+    margin-bottom: 1.4vh;
 }
 .wallet_instance_num{
     font-size:20px;
@@ -26,10 +32,11 @@ body{
     color:rgba(33, 33, 33, 0.835);
 }
 .wallet_instance_dot{
-    font-size:25px;
+    font-size:20px;
     font-weight:bold;
     color:rgb(149, 0, 175);
-    padding-right: 0.2vw;
+    padding-right: 10px;
+    padding-left: 5px
 }
 .wallet_instance_txt{
     text-transform: capitalize;
@@ -49,16 +56,17 @@ body{
     display:none;
 }
 
-#dynamic_content{
+.dynamic_content_wrapper{
+    overflow:auto;
     height:54vh;
     width:96%;
     margin-left:2%;
     margin-top:2vh;
     margin-bottom:7vh;
     border-radius: 10px;
-    -webkit-box-shadow: 0px 0px 100px -43px rgba(66, 68, 90, 1);
-    -moz-box-shadow: 0px 0px 100px -43px rgba(66, 68, 90, 1);
-    box-shadow: 0px 0px 100px -43px rgba(66, 68, 90, 1);
+    -webkit-box-shadow: 0px 4px 50px -28px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px 4px 50px -28px rgba(66, 68, 90, 1);
+    box-shadow: 0px 4px 50px -28px rgba(66, 68, 90, 1);
     
 }
 .budget_entry_form{
@@ -66,9 +74,9 @@ body{
     width:96%;
     margin-left:2%;
     border-radius: 10px;
-    -webkit-box-shadow: 0px 0px 100px -43px rgba(66, 68, 90, 1);
-    -moz-box-shadow: 0px 0px 100px -43px rgba(66, 68, 90, 1);
-    box-shadow: 0px 0px 100px -43px rgba(66, 68, 90, 1);
+    -webkit-box-shadow: 0px 4px 50px -28px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px 4px 50px -28px rgba(66, 68, 90, 1);
+    box-shadow: 0px 4px 50px -28px rgba(66, 68, 90, 1);
 }
 #budget_form{
     width:96%;
@@ -85,10 +93,11 @@ body{
     padding:20px 0 15px 0;
 
 }
-.color_marker{
+.color_marker, th{
     color:rgba(72, 0, 85, 0.635);
 }
 select {
+    text-transform: capitalize;
     display: block;
     width: 100%;
     padding: 0.375rem 2.25rem 0.375rem 0.75rem;
@@ -111,4 +120,50 @@ select {
 }
 #send_budget{
     margin-top: 2vh;
+}
+.info_wallet_title{
+    margin:2vh 0 0 0;
+}
+
+.info_instance_div{
+    width:96%;
+    margin-left:2%;
+}
+.info_wallet_id,.info_wallet_date,.info_wallet_shared{
+    opacity:0.9;
+    font-size:14px;
+}
+.info_wallet_entry{
+    margin-top:2vh;
+}
+thead, th, tr{
+    border-color: black;
+}
+.table-hover> tbody> tr{
+    transition: 0.2s
+  
+}
+.table-hover> tbody> tr:hover{
+    background-color:rgba(217, 0, 255, 0.02) !important;
+}
+td{
+    text-transform: capitalize;
+}
+.info_wallet_pos{
+    margin-top:3vh;
+}
+
+::-webkit-scrollbar-track{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+::-webkit-scrollbar{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #c1c1c1;
 }

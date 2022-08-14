@@ -36,3 +36,14 @@ class WalletInstance(models.Model):
     entry = models.ManyToManyField(BudgetEntry, related_name='BudgetEntry', blank=True)
     date_added = models.DateField(auto_now_add=True)
 
+    def total_amount(self, value):
+        queryset = self.entry.filter(entry_type=value).aggregate(
+            total_amount=models.Sum('amount'))
+            
+        if queryset["total_amount"] == None:
+            queryset["total_amount"] = 0
+        
+        return queryset["total_amount"]
+
+    def __str__(self):
+        return f'owner: {self.owner} name: {self.name}'
