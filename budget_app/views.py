@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required, permission_required
 from .forms import WalletForm, EntryForm
 # Create your views here.
 
+@login_required
 def main(request):
     form_wallet = WalletForm()
     form_budget = EntryForm()
@@ -21,5 +22,11 @@ def logout(request):
     django_logout(request)
     domain = settings.SOCIAL_AUTH_AUTH0_DOMAIN
     client_id = settings.SOCIAL_AUTH_AUTH0_KEY
-    return_to = 'http://127.0.0.1:8000' # this can be current domain
+    return_to = 'http://127.0.0.1:8000/landing' # this can be current domain
     return redirect(f'https://{domain}/v2/logout?client_id={client_id}&returnTo={return_to}')
+
+def landing(request):
+ 
+
+    return render(request, 'budget_app/landing.html', )
+    

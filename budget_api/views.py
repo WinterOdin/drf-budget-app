@@ -1,11 +1,9 @@
 from .serializers import WalletInstanceSerializer, BudgetEntrySerializer
-from rest_framework.permissions import IsAuthenticated
 from budget_app.models import WalletInstance, BudgetEntry, Category
+from rest_framework.permissions import IsAuthenticated
 from .filters import WalletFilter, BudgetFilter
 from rest_framework import viewsets
-from django.conf import settings
 from django.db.models import Q
-from django.db.models import Sum
 
 
 class WalletViewset(viewsets.ModelViewSet):
@@ -24,8 +22,8 @@ class WalletViewset(viewsets.ModelViewSet):
         return available.order_by('date_added')
 
     def perform_create(self, serializer):
-        print(serializer)
         serializer.save(owner=self.request.user)
+
 
 class BudgetEntryViewset(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
@@ -42,11 +40,9 @@ class BudgetEntryViewset(viewsets.ModelViewSet):
     def perform_create(self, request):
 
         form_data = self.request.data.copy()
-        print(form_data)
         wallet_id = form_data['wallet_entry_id']
         wallet_obj = WalletInstance.objects.get(id=wallet_id)
         if wallet_obj.owner.id == self.request.user.id:
-            print(form_data)
             serializer = BudgetEntrySerializer(data=form_data)
             if serializer.is_valid():
                 

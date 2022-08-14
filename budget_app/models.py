@@ -1,7 +1,6 @@
-from django.conf import settings
-from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.conf import settings
+from django.db import models
 import uuid
 
 class User(AbstractUser):
@@ -39,7 +38,7 @@ class WalletInstance(models.Model):
     def total_amount(self, value):
         queryset = self.entry.filter(entry_type=value).aggregate(
             total_amount=models.Sum('amount'))
-            
+
         if queryset["total_amount"] == None:
             queryset["total_amount"] = 0
         
