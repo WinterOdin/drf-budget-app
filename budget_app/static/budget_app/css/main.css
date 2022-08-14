@@ -36,7 +36,7 @@
     font-weight:bold;
     color:rgb(149, 0, 175);
     padding-right: 10px;
-    padding-left: 5px
+    padding-left: 5px 
 }
 .wallet_instance_txt{
     text-transform: capitalize;
@@ -50,12 +50,10 @@
 .main_right_container{
     max-height:100vh;
     width:100%;
-   
 }
 .info_instance_div:nth-of-type(n+2){
     display:none;
 }
-
 .dynamic_content_wrapper{
     overflow:auto;
     height:54vh;
@@ -67,7 +65,6 @@
     -webkit-box-shadow: 0px 4px 50px -28px rgba(66, 68, 90, 1);
     -moz-box-shadow: 0px 4px 50px -28px rgba(66, 68, 90, 1);
     box-shadow: 0px 4px 50px -28px rgba(66, 68, 90, 1);
-    
 }
 .budget_entry_form{
     height:33vh;
@@ -80,7 +77,7 @@
 }
 #budget_form{
     width:96%;
-    margin-left:2%
+    margin-left:2% 
 }
 .budget_form_spacer{
     margin-bottom: 20px;
@@ -91,7 +88,6 @@
     color:rgba(0, 0, 0, 0.813);
     text-align: center;
     padding:20px 0 15px 0;
-
 }
 .color_marker, th{
     color:rgba(72, 0, 85, 0.635);
@@ -124,7 +120,6 @@ select {
 .info_wallet_title{
     margin:2vh 0 0 0;
 }
-
 .info_instance_div{
     width:96%;
     margin-left:2%;
@@ -140,8 +135,7 @@ thead, th, tr{
     border-color: black;
 }
 .table-hover> tbody> tr{
-    transition: 0.2s
-  
+    transition: 0.2s 
 }
 .table-hover> tbody> tr:hover{
     background-color:rgba(217, 0, 255, 0.02) !important;
@@ -154,19 +148,41 @@ td{
 }
 .landingBudget{
     font-size:45px;
-    
+}
+.no_data{
+    text-align:center;
+    font-size:20px;
+}
+.no_data_info{
+    transform: rotate(90deg);
+    width:100%;
+    font-size: 40px;
+    color:black;
+    text-align: right;
 }
 ::-webkit-scrollbar-track{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	border-radius: 10px;
-	background-color: #F5F5F5;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
 }
 ::-webkit-scrollbar{
-	width: 12px;
-	background-color: #F5F5F5;
+    width: 12px;
+    background-color: #F5F5F5;
 }
 ::-webkit-scrollbar-thumb{
-	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: #c1c1c1;
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #c1c1c1;
+}
+@media (max-width:770px){
+    #wallet_row_wrapper {
+        max-height: 35vh;
+   }
+    #send_form{
+        margin-top:2vh;
+        margin-left: 40%;
+   }
+    .budget_entry_form{
+        margin-bottom:5vh;
+   }
 }

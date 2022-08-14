@@ -1,5 +1,6 @@
 function runWallet(url_wallet, url_entry) {
-    
+
+
     function runWhistles(){
         var wallet_content_container = $("#dynamic_content")
         var wallet_instance_content = $("#wallet_row")
@@ -135,6 +136,12 @@ function runWallet(url_wallet, url_entry) {
                             counter += 1;
                         }
                     }
+                }else{
+                    var wallet_no_data =
+                    '<div class="no_data justify-content-center align-self-center">No data was found. <br /> Create your wallet</div>'
+                    wallet_pos.insertAdjacentHTML('beforeend', wallet_no_data);
+                    detail_pos.insertAdjacentHTML('beforeend', wallet_no_data);
+
                 }
                 var first_loaded_wallet_id = $('.row_wallet_instance:first').attr('data_wallet');
                 var wallet_id_form = $('#id_wallet_entry_id')
