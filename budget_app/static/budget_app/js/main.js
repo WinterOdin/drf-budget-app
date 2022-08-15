@@ -159,7 +159,7 @@ function runWallet(url_wallet, url_entry) {
              
 			},
 			error: function(response) {
-				
+				console.log("couldn't load the data, server response: "+ response)
 			}
 	});}
     
@@ -177,11 +177,9 @@ function runWallet(url_wallet, url_entry) {
 
                 runWhistles()
                 
-                
-			
 			},
 			error: function(response) {
-		
+                console.log("couldn't add the entry data, server response: "+ response)
 			}
 		})
 	})
@@ -201,7 +199,7 @@ function runWallet(url_wallet, url_entry) {
                 runWhistles();
 			},
 			error: function(response) {
-		
+                console.log("couldn't add the wallet data, server response: "+ response)
 			}
 		})
 	})
